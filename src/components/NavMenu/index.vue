@@ -4,7 +4,6 @@
       
       <el-menu
         default-active="2"
-        class="el-menu-vertical-demo"
         @open="handleOpen"
         @close="handleClose"
         background-color="#545c64"
@@ -12,6 +11,7 @@
         active-text-color="#ffd04b"
         unique-opened
         router
+        style="border-right: 0px !important;"
       >
 
         <el-submenu 

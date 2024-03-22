@@ -1,17 +1,21 @@
 <template>
   <div>
     <el-container>
-      <el-header class="header">
-        <Header />
-      </el-header>
+
+      <el-aside width="200px">
+        <NavMenu />
+      </el-aside>
+
       <el-container>
-        <el-aside width="200px">
-          <NavMenu />
-        </el-aside>
+        <el-header class="header">
+          <Header />
+        </el-header>
+
         <el-main>
           <router-view />
         </el-main>
       </el-container>
+
     </el-container>
   </div>
 </template>
@@ -33,5 +37,18 @@ export default {
   color: #fff;
   line-height: 60px;
 
+}
+.el-container {
+  /*设置内部填充为0，几个布局元素之间没有间距*/
+  padding: 0px !important;
+  /*外部间距也是如此设置*/
+  margin: 0px !important;
+  /*统一设置高度为100%*/
+  height: 100vh;
+}
+.el-aside {
+  background-color: #545c64;
+  text-align: center;
+  height: 100vh !important;
 }
 </style>
