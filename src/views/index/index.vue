@@ -1,16 +1,21 @@
 <template>
   <div>
     <el-container>
-
-      <el-aside width="200px">
-        <NavMenu />
-      </el-aside>
-
-      <el-container>
         <el-header class="header">
           <Header />
         </el-header>
 
+      <!-- <el-aside width="200px">
+        <NavMenu />
+      </el-aside> -->
+
+      <el-container>
+        <!-- <el-header class="header">
+          <Header />
+        </el-header> -->
+        <el-aside width="200px">
+          <NavMenu />
+        </el-aside>
         <el-main>
           <router-view />
         </el-main>
