@@ -41,7 +41,7 @@ export default {
   background-color: #409EFF;
   color: #fff;
   line-height: 60px;
-
+  width: 100%;
 }
 .el-container {
   /*设置内部填充为0，几个布局元素之间没有间距*/

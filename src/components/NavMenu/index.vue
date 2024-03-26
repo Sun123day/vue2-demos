@@ -2,8 +2,8 @@
   <el-row class="tac">
     <el-col :span="24">
       
+      <!-- default-active="1-1" -->
       <el-menu
-        default-active="2"
         @open="handleOpen"
         @close="handleClose"
         background-color="#545c64"
@@ -28,10 +28,6 @@
             v-for="sub in item.sub" 
             :key="sub.route"
           >
-            <!-- <el-menu-item 
-              :index="sub.route"
-              v-text="sub.name"
-            /> -->
             <el-menu-item 
               :index="sub.route"
               v-text="sub.name"
