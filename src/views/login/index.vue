@@ -44,29 +44,21 @@ export default {
   methods: {
     submitForm() {
       login({
+        //设置传参，后端此时需要的参数为username、password
         username: this.userName,
         password: this.passWord,
       }).then(res => {
-          console.log(res, 'before')
+        console.log(res, "before");//看获取到的res的数据结构，根据其中的code判断是否成功
         if(res.data.code == 200) {
-          // console.log(res, "&&&&&&&&&&&&&&");
+          // console.log(res.data.data, "after"); //打印其中的数据结构看获取到的data
           this.$router.push({
             path: '/',
             name: 'index'
           })
         }
       }).catch(err => {
-        alert(err + "账号或密码有误，请重新输入！！！")
+        alert(err)
       })
-      // if(this.userName === 'admin' && this.passWord === 'Admin123!') {
-      //   this.$router.push({
-      //     path: '/',
-      //     name: 'index'
-      //   })
-      // } else {
-      //   alert("账号或密码有误，请重新输入！！！")
-      //   this.resetForm()
-      // }
     },
     resetForm() {
       this.userName = ''
