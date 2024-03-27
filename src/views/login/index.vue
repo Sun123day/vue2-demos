@@ -10,6 +10,7 @@
           v-model="userName" 
           autocomplete="off"
           style="width: 100%;"
+          clearable
         />
       </el-form-item>
       <el-form-item label="密码" prop="passWord">
@@ -18,9 +19,10 @@
           v-model="passWord" 
           autocomplete="off"
           style="width: 100%;"
+          clearable
         />
       </el-form-item>
-      <el-form-item>
+      <el-form-item style="display: flex; justify-content: space-between;">
         <el-button type="primary" @click="submitForm">提交</el-button>
         <el-button @click="resetForm">重置</el-button>
       </el-form-item>
@@ -41,11 +43,30 @@ export default {
   },
   methods: {
     submitForm() {
-      login().then(res => {
-        console.log(res)
+      login({
+        username: this.userName,
+        password: this.passWord,
+      }).then(res => {
+          console.log(res, 'before')
+        if(res.data.code == 200) {
+          // console.log(res, "&&&&&&&&&&&&&&");
+          this.$router.push({
+            path: '/',
+            name: 'index'
+          })
+        }
       }).catch(err => {
-        console.log(err)
+        alert(err + "账号或密码有误，请重新输入！！！")
       })
+      // if(this.userName === 'admin' && this.passWord === 'Admin123!') {
+      //   this.$router.push({
+      //     path: '/',
+      //     name: 'index'
+      //   })
+      // } else {
+      //   alert("账号或密码有误，请重新输入！！！")
+      //   this.resetForm()
+      // }
     },
     resetForm() {
       this.userName = ''

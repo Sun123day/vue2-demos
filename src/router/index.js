@@ -15,10 +15,15 @@ const routes = [
   //   name: 'about',
   //   component: () => import('@/views/AboutView.vue')
   // },
-  // {
-  //   path: '/',
-  //   redirect: '/index'
-  // },
+  {
+    path: '/',
+    redirect: '/login'
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/views/login/index.vue')
+  },
   {
     path: '/',
     name: 'index',
@@ -46,11 +51,6 @@ const routes = [
       },
 
     ]
-  },
-  {
-    path: '/login',
-    name: 'login',
-    component: () => import('@/views/login/index.vue')
   },
 ]
 

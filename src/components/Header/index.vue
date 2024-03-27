@@ -1,10 +1,6 @@
 <template>
 <div>
-  <!-- <el-row>
-    <el-col :span="24"> -->
-      <div>Element</div>
-    <!-- </el-col>
-  </el-row> -->
+  <el-button>点击退出</el-button>
 </div>
 </template>
 
